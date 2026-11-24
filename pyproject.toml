@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loralens"
+version = "0.1.0"
+description = "Inspect LoRA adapters and lower their rank with SVD. Reads kohya, PEFT and diffusers .safetensors files with numpy only."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "ngo-binh0108"}]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.22"]
+keywords = ["lora", "peft", "stable-diffusion", "safetensors", "svd"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+loralens = "loralens.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ngo-binh0108/loralens"
+
+[tool.setuptools.packages.find]
+where = ["src"]
